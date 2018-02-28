@@ -3,8 +3,10 @@ function getAllTodos(){
         .then(function(response){
             return response.json();
         })
-        .then(function(jsonData){
-            console.log(jsonData);
+        .then(function(allTodos){
+            console.log(allTodos);
+            displayAllTodos(allTodos);
+
         })
         .catch(function(error) {
             const errorMessage = document.getElementById('errorMessage');
@@ -12,3 +14,27 @@ function getAllTodos(){
           });
 }
 getAllTodos();
+
+function displayAllTodos(allTodos){
+        
+        for( const singleTodo of allTodos){
+            //console.log(allTodo);
+            if(singleTodo.complete == false){
+                const todosId = document.getElementById('todosId');
+                let allTodoInfo = `
+            <p>${singleTodo.text}</p>
+            `;
+            todosId.insertAdjacentHTML('beforeend', allTodoInfo); 
+            } else{ 
+                const doneTodosId = document.getElementById('doneTodosId');
+                let allTodoInfo = `
+            <p>${singleTodo.text}</p>
+            `;
+            doneTodosId.insertAdjacentHTML('beforeend', allTodoInfo); 
+            }
+             
+        }
+     }
+   
+
+
