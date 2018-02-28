@@ -44,7 +44,8 @@ function displayAllTodos(allTodos){
 input.addEventListener('change',function(){
     
     const input = document.getElementById('input');
-    const inputValue = input.value;
+    let inputValue = input.value;
+    
 
     const postOptions = {
         method: 'POST',

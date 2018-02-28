@@ -1,5 +1,8 @@
 # Practice-fetch-with-API
 
+!!! Important!!!!
+This Application Dose Not Work Properly.
+
 Övning - todos
 1.Hämta alla todos och visa upp de i en snygg lista i HTML. Du behöver göra en GET-request med fetch(). Se över koden från genomgången för att få hjälp. Du ska alltså lägga manipulera och lägga till DOM-element efter att du har fått tillbaka svaret från databasen, d.v.s inuti then(). Kom ihåg att värdet som kommer tillbaka är JSON och måste göras om till JavaScript
 
