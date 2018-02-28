@@ -6,6 +6,7 @@ function getAllTodos(){
         .then(function(allTodos){
             console.log(allTodos);
             displayAllTodos(allTodos);
+            
 
         })
         .catch(function(error) {
@@ -34,7 +35,26 @@ function displayAllTodos(allTodos){
             }
              
         }
-     }
+}
+
+
    
 
 
+input.addEventListener('change',function(){
+    
+    const input = document.getElementById('input');
+    const inputValue = input.value;
+
+    const postOptions = {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(
+            { 
+                text: inputValue, 
+                complete: false 
+            }
+        )
+      };
+      fetch('http://fed17.herokuapp.com/todos/', postOptions);
+})
